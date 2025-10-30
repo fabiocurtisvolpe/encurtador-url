@@ -1,0 +1,6 @@
+docker-compose up -d
+
+docker exec -it cassandra-db cqlsh
+
+CREATE KEYSPACE IF NOT EXISTS mykeyspace 
+WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1};
